@@ -1,0 +1,295 @@
+electrum (4.0.9-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Fri, 15 Jan 2021 16:03:10 +0200
+
+electrum (4.0.2-2) unstable; urgency=medium
+
+  * Filter out qdarkstyle dependency (Closes: #969225).
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Sun, 30 Aug 2020 13:03:14 +0200
+
+electrum (4.0.2-1) unstable; urgency=medium
+
+  * Fix dependencies on python3-{attr,cryptography} (Closes: #968563, #968666).
+  * Improve message about PyQt5 (Closes: #917032).
+  * Bump debhelper from old 11 to 13.
+  * Set debhelper-compat version in Build-Depends.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Set Rules-Requires-Root: no.
+  * Use dh-sequence-python3.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Thu, 20 Aug 2020 15:57:28 +0200
+
+electrum (4.0.2-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * debian/gbp.conf: Turn pristine-tar on
+  * New upstream version 4.0.2 (Closes: #964635, #964828)
+  * debian/control: Adjust the Build-dependencies
+  * debian/control: Bump Standards-Version to 4.5.0 (no further changes)
+  * debian/control: Add python3-qdarkstyle to the Recommends (Closes: #913759)
+
+ -- Laurent Bigonville <bigon@debian.org>  Thu, 23 Jul 2020 14:46:59 +0200
+
+electrum (3.3.8-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * New upstream release.
+    - Fix critical vulnerability allowing certain malicious servers to display
+      fishing messages to the user (Closes: #921688)
+    - debian/control: Update the build-dependencies
+  * debian/rules: Stop calling pyrcc5, this is not needed anymore
+  * Do not move files in debian/rules but use debian/*.install files
+  * debian/control: Add proper Breaks/Replaces for electrum.png being moved
+    between packages (Closes: #912042)
+  * debian/control: revealer plugin seems to explicitly use "DejaVu Sans Mono"
+    font, recommend fonts-dejavu-core accordingly. Do not delete
+    SourceSansPro-Bold.otf font anymore as it's also explicitly used, but not
+    part of any public font package
+  * debian/control: Bump Standards-Version to 4.4.0 (no further changes)
+  * debian/control: Add libsecp256k1-0 to the Recommends, it is used to speed
+    up elliptic curve operations (Closes: #913760)
+
+ -- Laurent Bigonville <bigon@debian.org>  Sat, 07 Sep 2019 10:34:31 +0200
+
+electrum (3.2.3-1) unstable; urgency=medium
+
+  * New upstream release.
+    - Fix build issues (closes: #910306).
+  * Bump Standards-Version to 4.2.1 (no changes).
+  * Update debian/copyright.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Mon, 22 Oct 2018 07:20:00 +0200
+
+electrum (3.1.3-1) unstable; urgency=medium
+
+  * Update maintainer address (I am effectively the sole maintainer);
+    closes: #899486.
+  * Move git repository to Salsa.
+  * New upstream release.
+    - Drop patches (applied upstream).
+  * Bump Standards-Version to 4.1.4 (no changes).
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Sun, 10 Jun 2018 19:24:45 +0200
+
+electrum (3.1.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Mon, 12 Mar 2018 21:42:01 +0200
+
+electrum (3.1.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump debhelper compat level to 11.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Sat, 10 Mar 2018 18:35:06 +0200
+
+electrum (3.0.6-1) unstable; urgency=medium
+
+  * New upstream release.
+    - Fixes an issue with parsing some transactions.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Sat, 10 Feb 2018 23:25:59 +0200
+
+electrum (3.0.5-1) unstable; urgency=high
+
+  * New upstream release.
+    - JSON-RPC interface is now password protected for further security,
+      and locked down when using the GUI.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Mon, 08 Jan 2018 03:49:04 +0200
+
+electrum (3.0.4-1) unstable; urgency=high
+
+  * New upstream release.
+    - Fixes a security issue allowing hostile JavaScript to access the
+      JSON-RPC server: https://github.com/spesmilo/electrum/issues/3374
+  * Fix debian/copyright for new vendored packages.
+  * Bump Standards-Version to 4.1.3 (no changes).
+  * Bump debhelper compat level to 10.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Sun, 07 Jan 2018 03:43:55 +0200
+
+electrum (3.0.3-1) unstable; urgency=medium
+
+  * New upstream release (closes: #881703).
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Sat, 18 Nov 2017 12:49:34 +0200
+
+electrum (2.9.3-1) unstable; urgency=medium
+
+  * New upstream release (closes: #870081, #875828, #878288).
+    - Cold storage signing issue fixed (closes: #870081).
+    - Drop slowaes dependency, add pycryptodome + pyaes.
+  * Add some other missing dependencies.
+  * Fixed a typo ("defaut") in the man page.
+  * Update copyright file to properly cover "packages".
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Wed, 23 Nov 2016 14:32:35 +0200
+
+electrum (2.6.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump Standards-Version to 3.9.8 (no changes).
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Sun, 22 May 2016 03:59:05 +0200
+
+electrum (2.6.3-1) unstable; urgency=medium
+
+  * New upstream release.
+    - Drop backported install-wizard-connect.patch.
+  * Add Suggests: python-zbar and update the installation hint to suggest
+    apt-get instead of pip (closes: #819517).
+  * Bump Standards-Version to 3.9.7 (no changes).
+  * Update Vcs-* links.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Mon, 04 Apr 2016 03:02:39 +0200
+
+electrum (2.5.4-2) unstable; urgency=medium
+
+  * Backport upstream patch (e9ee851b) for install wizard issue.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Fri, 04 Dec 2015 08:20:45 +0200
+
+electrum (2.5.4-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Thu, 12 Nov 2015 19:47:32 +0200
+
+electrum (2.5.3-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Thu, 12 Nov 2015 01:59:53 +0200
+
+electrum (2.5.2-2) unstable; urgency=medium
+
+  * Add python-qt4 to Recommends, as most users will want this installed
+    for the GUI to work (closes: #803422).
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Fri, 30 Oct 2015 09:05:12 +0200
+
+electrum (2.5.2-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Fri, 30 Oct 2015 07:40:24 +0200
+
+electrum (2.5.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Fri, 23 Oct 2015 21:00:40 +0200
+
+electrum (2.4.4-1) unstable; urgency=low
+
+  * New upstream release.
+    - No longer need to repack, docs removed upstream due to being
+      outdated / deprecated.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Mon, 24 Aug 2015 00:44:34 +0200
+
+electrum (2.4.2+dfsg1-1) unstable; urgency=low
+
+  [ Vasudev Kamath ]
+  * Drop myself from uploaders.
+
+  [ Tristan Seligmann ]
+  * New upstream release (closes: #792231, #788538).
+    - Update debian/watch.
+    - Remove 3001_dont_fetch_translations_from_web.patch: obsolete.
+    - Remove 2001_add_tailing_semicolon.patch: merged upstream.
+    - Remove 2002_dont_use_local_share.patch: obsolete.
+    - Remove 1001_use_sslv23_method.patch: merged upstream.
+    - Remove 1002_qt_compatibility.patch: merged upstream.
+    - Repack upstream tarball to remove prebuilt sphinx docs which contain
+      some JavaScript libraries without source.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Thu, 20 Aug 2015 23:55:43 +0200
+
+electrum (1.9.8-4) unstable; urgency=medium
+
+  [ Tristan Seligmann ]
+  * Backport upstream patch fixing wallet wizard (closes: #764138).
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Tue, 13 Jan 2015 13:29:08 +0200
+
+electrum (1.9.8-3) unstable; urgency=medium
+
+  * Backport upstream change to use PROTOCOL_SSL23 instead of
+    PROTOCOL_SSL3 which was removed in python 2.7.8-12 (closes: #770392).
+  * Make some additional description fixes.
+    - Thanks to Carlo Stemberger this time.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Sun, 23 Nov 2014 09:59:37 +0200
+
+electrum (1.9.8-2) unstable; urgency=medium
+
+  * Update / fix package description.
+    - Thanks to Duncan de Wet for the updated description.
+  * Bump Standards-Version to 3.9.6.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Sun, 05 Oct 2014 03:09:37 +0200
+
+electrum (1.9.8-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update translations patch and translations.
+  * Install upstream changelog.
+  * Enable PGP signature checking in uscan.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Sun, 04 May 2014 10:30:45 +0200
+
+electrum (1.9.7-1) unstable; urgency=medium
+
+  [ Vasudev Kamath ]
+  * Add Tristan Seligmann as uploader in debian/control.in
+  * Build-Depends added to debian/control moved to debian/rules for clean
+    regeneration of control using CDBS.
+  * Rename dont_use_local_share.patch to follow patch naming micro
+    guidelines as defined in debian/patches/README.
+  * Clean up patch headers of dont_use_local_share.patch
+  * Add README.source describing some CDBS conventions used in the package.
+
+  [ Tristan Seligmann ]
+  * New upstream release.
+  * Bump Standards-Version.
+  * python-qt4 dependency is actually present again after I accidentally broke
+    it in the last version (closes: #733592).
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Wed, 15 Jan 2014 01:52:20 +0200
+
+electrum (1.9.5-1) unstable; urgency=low
+
+  [ Tristan Seligmann ]
+  * New upstream release (closes: #730353).
+    - Contacts bugfix included in 1.8.1 (closes: #727232).
+  * Add myself to Uploaders.
+  * Acknowledge NMU.
+  * Update watch file.
+  * Update mk18n.py patch and ship new translations file.
+  * Bump dependency on python-ecdsa for secp256k1.
+  * Remove deprecated CDBS dependency management.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Wed, 11 Dec 2013 11:52:51 +0200
+
+electrum (1.8-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix "electrum fails to launch from terminal":
+    add dependency on python-qt4.
+    (Closes: #724750)
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 04 Nov 2013 19:29:31 +0100
+
+electrum (1.8-1) unstable; urgency=low
+
+  * Initial Release.
+    Closes: bug#704464
+
+ -- Vasudev Kamath <kamathvasudev@gmail.com>  Wed, 19 Jun 2013 21:44:47 +0530

@@ -1,0 +1,88 @@
+Source: electrum
+Maintainer: Ivan J. <parazyd@dyne.org>
+Section: user/network
+Priority: optional
+Build-Depends:
+ debhelper-compat (= 12),
+ devscripts,
+ dh-sequence-python3,
+ libsecp256k1-0,
+ pyqt5-dev-tools,
+ python3,
+ python3-aiohttp (>= 3.3.0),
+ python3-aiohttp-socks (>= 0.3),
+ python3-aiorpcx (>= 0.18),
+ python3-attr (>= 19.2.0),
+ python3-bitstring,
+ python3-certifi,
+ python3-cryptography,
+ python3-dnspython,
+ python3-ecdsa (>= 0.14),
+ python3-pbkdf2,
+ python3-protobuf (>= 3.12),
+ python3-pyaes,
+ python3-pyqt5,
+ python3-qrcode,
+ python3-setuptools,
+Standards-Version: 4.3.0
+Vcs-Git: https://github.com/maemo-leste-extras/electrum
+Vcs-Browser: https://github.com/maemo-leste-extras/electrum
+Homepage: https://electrum.org/
+Rules-Requires-Root: no
+
+Package: python3-electrum
+Architecture: all
+Section: python
+Depends:
+ libsecp256k1-0,
+ python3-cryptography (>= 2.1),
+ ${misc:Depends},
+ ${python3:Depends},
+Recommends: fonts-dejavu-core
+Breaks: electrum (<= 2.3.1~), python-electrum (<= 3.0.2~)
+Replaces: electrum (<= 2.3.1~), python-electrum
+Description: Easy to use Bitcoin client - Python module
+ This package provides a lightweight Bitcoin client which protects
+ you from losing your bitcoins in a backup mistake or computer
+ failure. Also, Electrum does not require waiting time because it does
+ not download the Bitcoin blockchain.
+ .
+ This package provides the "electrum" Python module which can be used to access
+ a Bitcoin wallet from Python programs.
+
+Package: electrum
+Architecture: all
+Depends:
+ python3-electrum (= ${binary:Version}),
+ ${misc:Depends},
+ ${python3:Depends},
+Recommends: python3-pyqt5, python3-qdarkstyle
+Suggests: python3-btchip, python3-trezor, python3-zbar
+Breaks: python3-electrum (<< 3.2.3-1~)
+Replaces: python3-electrum (<< 3.2.3-1~)
+Description: Easy to use Bitcoin client
+ This package provides a lightweight Bitcoin client which protects
+ you from losing your bitcoins in a backup mistake or computer
+ failure. Also, Electrum does not require waiting time because it does
+ not download the Bitcoin blockchain.
+ .
+ Features of Electrum:
+ .
+   * Instant on: Your client does not download the blockchain. It uses a
+     network of specialized servers that index the blockchain.
+   * Forgiving: Your wallet can be recovered from a secret seed.
+   * Safe: Your seed and private keys are encrypted on your hard drive.
+     They are never sent to the servers.
+   * Low trust: Information received from the servers is verified using
+     SPV. Servers are authenticated using SSL.
+   * No downtimes: Your client is not tied to a particular server; it
+     will switch instantly if your server is down.
+   * Ubiquitous: You can use the same wallet on different computers, they
+     will synchronize automatically.
+   * Cold Storage: Sign transactions from a computer that is always
+     offline. Broadcast them using a machine that does not have your keys.
+   * Reachable: You can export your private keys into other Bitcoin
+     clients.
+   * Established: Electrum is open source and was first released in
+     November 2011.
+XB-Maemo-Icon-26: ${maemo:icon26}
