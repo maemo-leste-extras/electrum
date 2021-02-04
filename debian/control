@@ -24,6 +24,7 @@ Build-Depends:
  python3-pyqt5,
  python3-qrcode,
  python3-setuptools,
+ maemo-system-services-dev,
 Standards-Version: 4.3.0
 Vcs-Git: https://github.com/maemo-leste-extras/electrum
 Vcs-Browser: https://github.com/maemo-leste-extras/electrum
